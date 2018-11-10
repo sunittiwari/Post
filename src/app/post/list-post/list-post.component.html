@@ -1,0 +1,92 @@
+<h1>{{pageTitle}}</h1>
+
+<!-- <div class = "panel panel-primary">
+  <div class = "panel-heading">
+    
+  </div> 
+    <div class = "panel-body">
+      <table class ="table table-bordered" *ngIf = "listposts &&listposts.length">
+        <tr>
+          
+          <th>Post Name</th>
+          <th>Post Description</th>
+          <th>Created By</th>
+          
+          
+        </tr>
+        <tr *ngFor = "let list of listposts">
+          <td >
+            {{list.postTitle}} 
+          </td>
+          <td>{{list.postDescription}}</td>
+          <td>{{list.userName}}</td>
+          
+          <td><button class= "btn btn-primary" (click) = "ondetails()" [routerLink] = "['/post', list.postTitle]">
+            
+            {{showDetails ? "Hide Comment": "Show Comment"}}
+          </button></td> -->
+
+<!-- <td><button (click) = "onLike()" type="button" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-thumbs-up"aria-hidden="true"></span> Like
+          </button></td>
+          <td><button (click) = "onEdit()">Edit</button></td> -->
+
+<!--<td>{{product.starRating}}-->
+
+
+<!-- </tr>
+        
+      </table>
+      
+    </div>
+    
+</div> -->
+
+<div class="panel panel-primary" *ngFor="let list of listposts ; trackBy: trackPosts">
+  <div class="panel-heading">
+
+    Post Tile:{{list.postTitle}}
+  </div>
+  <div class="panel-body">
+    <div>
+      Create By : {{list.userName}}
+    </div>
+    Post Description: {{list.postDescription}}
+
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary" (click)="onLike(list._id)">Like</button>
+
+    <button type="button" class="btn btn-default" aria-label="Left Align">
+      <span [title]="list.likedBy" class="glyphicon glyphicon-thumbs-up" aria-hidden="true" (click)="onwholike(list._id)">Likes:- {{list.likes}} </span>
+      <!-- <Span >{{list.likedBy}}</Span> -->
+
+    </button>
+    <button type="button" class="btn btn-primary" (click)="onDelete(list._id)">Delete</button>
+    <app-edit-posts [id]="list._id" [postTitle]="list.postTitle" [postDetail]="list.postDescription"> </app-edit-posts>
+    <app-details [id]="list._id"></app-details>
+
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- <div class="btn-group" id = "editDelete">
+          <button type="button" class="">
+
+              <a [routerLink]="['edit', list._id]" (click)="showHideEditPost()">
+                {{EditPostBlock?"HideEditPost": "Show EditPost" }}
+              </a>
+          </button>
+          
+         
+      </div> -->
+
+</div>
+<!-- <app-edit-posts></app-edit-posts> -->
+
+
+
+<div>
+
+
+
+</div>

@@ -1,0 +1,20 @@
+<div class = "panel panel-primary">
+  <div class = "panel-heading ">
+    Create Post
+    <div class = "panel-body">
+        <form>
+            <div class="form-group">
+              <label for="postTitle">POST TITLE</label>
+              <input type="text" [(ngModel)]="authform.postTitle" name = "postTitle" class="form-control" id="postTitle" placeholder="POST TITLE">
+            </div>
+            <div class="form-group">
+              <label for="postDescription">Password</label>
+              <textarea rows="4" cols="50" [(ngModel)]="authform.postDescription" name = "postDescription" class="form-control" id="postDescription" placeholder="DESCRIPTION"></textarea>
+            </div>
+           
+            <button type="submit" class="btn btn-default" (click) = "pushPost()">SUBMIT</button>
+          </form>
+    </div>
+  </div>
+
+</div>

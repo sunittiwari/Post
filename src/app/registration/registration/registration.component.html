@@ -1,0 +1,23 @@
+<div class = "panel panel-primary">
+  <div class = "panel- heading">
+    <div class = "panel-body">
+        <div class="form-group">
+            <label for="exampleInputUsername">USERNAME</label>
+            <input type="text" class="form-control" [(ngModel)]="auth.username" name = "username"id="exampleInputusername" placeholder="USERNAME">
+          </div>
+          <div class="form-group">
+              <label for="exampleInputPassword">PASSWORD</label>
+              <input type="text" class="form-control" [(ngModel)]="auth.password" name = "password"id="exampleInputpassword" placeholder="PASSWORD">
+            </div>
+          <div class="form-group">
+                <label for="exampleInputFirtname">FIRSTNAME</label>
+                <input type="text" class="form-control" [(ngModel)]="auth.firstname" name = "firstname" id="exampleInputusername" placeholder="FIRSTNAME">
+          </div>
+          <div class="form-group">
+              <label for="exampleInputLastname">LASTNAME</label>
+              <input type="text" class="form-control" [(ngModel)]="auth.lastname" name = "lastname" id="exampleInputusername" placeholder="LASTNAME">
+        </div>   
+        <button type="submit" class="btn btn-default" (click) = "register()"Submit>SUBMIT</button>
+    </div>
+  </div>
+</div>
